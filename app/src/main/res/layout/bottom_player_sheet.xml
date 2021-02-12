@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/player_sheet_lay"
+    android:background="#FF4646"
+    app:behavior_hideable= "true"
+    app:behavior_peekHeight="60dp"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+ <LinearLayout
+     android:layout_width="wrap_content"
+     android:orientation="horizontal"
+     android:id="@+id/linearLayou_sheet"
+     app:layout_constraintStart_toStartOf="parent"
+     app:layout_constraintTop_toTopOf="parent"
+     android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/header_icon_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="4"
+        android:paddingTop="20dp"
+        android:paddingBottom="24dp"
+        android:layout_marginLeft="24dp"
+        app:srcCompat="@drawable/media_header_sheet" />
+     <TextView
+         android:id="@+id/player_header_name"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_weight="3"
+         android:paddingTop="20dp"
+         android:paddingBottom="24dp"
+         android:text="Media Player"
+         android:layout_marginLeft="20dp"
+         android:textColor="@android:color/white"
+         android:textSize="16sp" />
+ </LinearLayout>
+
+    <TextView
+        android:id="@+id/player_filename_sheet"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="32dp"
+        android:text="File Name"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayou_sheet"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayou_sheet" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/player_play_btn_sheet"
+        android:background="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/player_filename_sheet"
+
+        app:srcCompat="@drawable/play" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/player_pause_btn_sheet"
+        android:background="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/player_filename_sheet"
+        app:srcCompat="@drawable/pause" />
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/player_back_sheet"
+        android:background="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="25dp"
+        app:layout_constraintTop_toBottomOf="@+id/player_filename_sheet"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/player_play_btn_sheet"
+        app:srcCompat="@drawable/backward" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/player_forward_sheet"
+        android:background="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="25dp"
+        app:layout_constraintTop_toBottomOf="@+id/player_filename_sheet"
+        app:layout_constraintStart_toStartOf="@+id/player_play_btn_sheet"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/forward" />
+
+
+    <SeekBar
+        android:id="@+id/player_seekbar_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="32dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/player_play_btn_sheet" />
+</androidx.constraintlayout.widget.ConstraintLayout>
